@@ -122,7 +122,7 @@ async function askHai(promptHai, reportIds) {
         }
 
         const vulnerableReportIds = reply.match(/<vulnerableReportIds>([\d,]*)<\/vulnerableReportIds>/i);
-        const vulnerableReportsArray = [];
+        let vulnerableReportsArray = [];
         if (vulnerableReportIds && vulnerableReportIds[1]) {
             vulnerableReportsArray = vulnerableReportIds[1].split(",").map(Number);
         }
